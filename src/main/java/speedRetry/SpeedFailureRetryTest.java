@@ -22,6 +22,7 @@ public class SpeedFailureRetryTest extends SpeedRetryAnalyzer
         if(waitingTime==null)
             setWaitingTime(waitTime.retry_high());
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(getWaitingTime()));
+        driver.manage().window().maximize();
     }
 
     @Test(retryAnalyzer = SpeedRetryAnalyzer.class)
